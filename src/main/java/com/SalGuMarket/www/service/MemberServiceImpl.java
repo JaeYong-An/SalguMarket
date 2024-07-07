@@ -155,9 +155,32 @@ public class MemberServiceImpl implements MemberService{
 			return 1;			
 		}
 	}
+	
+	@Override
+	public int hasHeartSbno(String email, long sbno) {
+		// TODO Auto-generated method stub
+		HeartVO hasHeart = memberMapper.hasHeart(email, sbno);
+		if(hasHeart == null) {
+			return 0;
+		}else {
+			return 1;			
+		}
+	}
 
 	@Override
 	public void delHeart(HeartVO hvo) {
+		// TODO Auto-generated method stub
+		memberMapper.delHeart(hvo);
+	}
+	
+	@Override
+	public void insertHeartSbno(HeartVO hvo) {
+		// TODO Auto-generated method stub
+		memberMapper.insertHeart(hvo);
+	}
+	
+	@Override
+	public void delHeartSbno(HeartVO hvo) {
 		// TODO Auto-generated method stub
 		memberMapper.delHeart(hvo);
 	}

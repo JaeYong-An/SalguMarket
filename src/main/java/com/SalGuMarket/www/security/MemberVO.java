@@ -19,14 +19,13 @@ import lombok.ToString;
 @NoArgsConstructor
 public class MemberVO {
 	
-	private String email, name, walletAddress, pwd, nickName, regAt, regEmail, lastLogin;
+	private String email, name, pwd, nickName, regAt, regEmail, lastLogin;
 	private int report, heart, isProfile;
 	private List<AuthVO> authList;
 	private FileVO fvo;
 	
-	public MemberVO(String email, String walletAddress) {
+	public MemberVO(String email) {
 		this.email = email;
-		this.walletAddress = walletAddress;
 	}
 
 

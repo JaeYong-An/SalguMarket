@@ -60,5 +60,9 @@ public interface MemberMapper {
 
 	void delHeart(HeartVO hvo);
 
+	HeartVO hasHeartSbno(@Param("email") String email,@Param("sbno") long sbno);
+
+	void delHeartSbno(HeartVO hvo);
 	
+	void insertHeartSbno(HeartVO hvo);
 }

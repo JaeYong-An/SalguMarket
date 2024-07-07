@@ -73,16 +73,21 @@
             <div class="row featured__filter">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix" th:each="file : ${categoryImageList}">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" th:data-setbg=@{/upload/{saveDir}/{uuid}_main_{fileName}(saveDir=${file.saveDir},uuid=${file.uuid},fileName=${file.fileName})}>
+                        <div th:if="${file.fileName == ''}" class="featured__item__pic set-bg" th:data-setbg=@{/img/salgu_profile.png}>
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div th:if="${file.fileName != ''}" class="featured__item__pic set-bg" th:data-setbg=@{/upload/{saveDir}/{uuid}_main_{fileName}(saveDir=${file.saveDir},uuid=${file.uuid},fileName=${file.fileName})}>
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
                             <h6 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                            	<a th:href="@{/product/productDetail(pno=${file.pno})}">[[${file.productTitle}]]</a>
+                            	<a th:href="@{/sell/sellDetail(sbno=${file.sbno})}">[[${file.productTitle}]]</a>
                             </h6>
-                            <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">[[${file.price}]] ETH</h5>
+                            <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">[[${file.price}]]원</h5>
                         </div>
                     </div>
                 </div>

@@ -11,8 +11,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class HeartVO {
-
-	private String email;
-	private long bno, sbno;
+public class SellBoardVO {
+	private int readCount, cmtCount;	
+	private long sbno, price;
+	private String title, email, nickName, content, regAt, modAt, category;
 }

@@ -139,6 +139,36 @@ public class MemberController {
 		}
 		return "redirect:/board/boardDetail?bno="+hvo.getBno();
 	}
+	
+	@PostMapping("/heartSbno")
+	public String heartSbno(HeartVO hvo, Principal p, Model m) {
+		memberService.insertHeartSbno(hvo);
+		
+		if(p != null) {
+			MemberVO mvo = memberService.selectEmail(p.getName());
+			m.addAttribute("loginmvo", mvo);
+			//List<HeartVO> isdel = memberService.isdel(hvo.getBno(), p.getName());
+		}else {
+			MemberVO mvo = new MemberVO();
+			m.addAttribute("loginmvo", mvo);
+		}
+		return "redirect:/sell/sellDetail?bno="+hvo.getSbno();
+	}
+	
+	@PostMapping("/delHeartSbno")
+	public String delHeartSbno(HeartVO hvo, Principal p, Model m) {
+		memberService.delHeartSbno(hvo);
+		
+		if(p != null) {
+			MemberVO mvo = memberService.selectEmail(p.getName());
+			m.addAttribute("loginmvo", mvo);
+			//List<HeartVO> isdel = memberService.isdel(hvo.getBno(), p.getName());
+		}else {
+			MemberVO mvo = new MemberVO();
+			m.addAttribute("loginmvo", mvo);
+		}
+		return "redirect:/sell/sellDetail?bno="+hvo.getSbno();
+	}
 
 	@GetMapping("/otherspage")
 	public void otherspage(@RequestParam(name="email", required = false) String email, Model m) {

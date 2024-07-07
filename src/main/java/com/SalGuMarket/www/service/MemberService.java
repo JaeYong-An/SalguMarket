@@ -49,5 +49,11 @@ public interface MemberService {
 	int hasHeart(String email, long bno);
 
 	void delHeart(HeartVO hvo);
+	
+	int hasHeartSbno(String email, long sbno);
+	
+	void insertHeartSbno(HeartVO hvo);
+
+	void delHeartSbno(HeartVO hvo);
 
 }

@@ -14,15 +14,15 @@ public interface FileMapper {
 
 	List<FileVO> getFileList(long bno);
 
-	int saveProductFile(FileVO fvo);
+	int saveSellFile(FileVO fvo);
 
 	List<FileVO> getCategoriesSliderImageList10Image();
 
 	List<FileVO> get8MainImage(PagingVO pgvo);
 
-	FileVO getMainImageByPno(long pno);
+	FileVO getMainImageBySbno(long sbno);
 
-	List<FileVO> getMinorIamgeListByPno(long pno);
+	List<FileVO> getMinorIamgeListBySbno(long sbno);
 
 	void deleteFile(String email);
 
@@ -41,4 +41,6 @@ public interface FileMapper {
 	List<FileVO> selectListAllFile();
 
 	List<FileVO> selectBnoAllFile(long bno);
+	
+	List<FileVO> selectSbnoAllFile(long sbno);
 }

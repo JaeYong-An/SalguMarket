@@ -228,3 +228,10 @@ REFERENCES board(bno);
 create table heart(
 email varchar(200),
 pno bigint);
+
+--------- alter table ----------
+alter table member drop column wallet_address;
+alter table sell_board add column price bigint default 0;
+alter table file drop column pno;
+alter table file add column sbno bigint;
+alter table heart add column sbno bigint;

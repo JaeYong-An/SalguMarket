@@ -5,7 +5,6 @@ import java.util.List;
 import com.SalGuMarket.www.domain.BoardVO;
 import com.SalGuMarket.www.domain.CommentVO;
 import com.SalGuMarket.www.domain.PagingVO;
-import com.SalGuMarket.www.domain.ProductVO;
 
 import lombok.Getter;
 import lombok.Setter;

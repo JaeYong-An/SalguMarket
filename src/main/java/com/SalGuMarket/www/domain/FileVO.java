@@ -20,7 +20,7 @@ public class FileVO {
 	private String productTitle;
 	private long price;
 	private long bno; //자유게시판
-	private long pno; //상품
+	private long sbno; //상품
 	private long noBno; //공지사항
 	private long qBno; //1:1문의
 	private long fileSize; //파일 사이즈
